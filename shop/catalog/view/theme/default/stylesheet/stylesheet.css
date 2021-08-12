@@ -197,18 +197,18 @@ div.required .control-label:before {
 }
 /* menu */
 #menu {
-	background-color: #229ac8;
-	background-image: linear-gradient(to bottom, #23a1d1, #1f90bb);
+	/* background-color: #229ac8; */
+	/* background-image: linear-gradient(to bottom, #23a1d1, #1f90bb); */
 	background-repeat: repeat-x;
-	border-color: #1f90bb #1f90bb #145e7a;
+	/* border-color: #1f90bb #1f90bb #145e7a; */
 	min-height: 40px;
 }
 #menu .nav > li > a {
-	color: #fff;
-	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	color: #000;
+	/* text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); */
 	padding: 10px 15px 10px 15px;
 	min-height: 15px;
-	background-color: transparent;
+	/* background-color: transparent; */
 }
 #menu .nav > li > a:hover, #menu .nav > li.open > a {
 	background-color: rgba(0, 0, 0, 0.1);

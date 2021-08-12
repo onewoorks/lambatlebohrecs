@@ -279,6 +279,13 @@ div.required .control-label:before {
 	#menu .dropdown:hover .dropdown-menu {
 		display: block;
 	}
+	.navbar-collapse.collapse {
+		text-align: center;
+		display: inline-block;
+		height: auto!important;
+		padding-bottom: 0;
+		overflow: visible!important;
+	}
 }
 @media (max-width: 767px) {
 	#menu {
@@ -748,4 +755,8 @@ h2.price {
 .btn-info:hover, .btn-info:active, .btn-info.active, .btn-info.disabled, .btn-info[disabled] {
     background-image: none;
     background-color: #df5c39;
+}
+
+@media (min-width: 768px){
+
 }

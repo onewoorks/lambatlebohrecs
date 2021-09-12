@@ -17,7 +17,7 @@
 
 #llb-header {
     position: fixed;
-    height: 100px;
+    height: 76px;
     top: 0;
     z-index: 10000;
     background-color: #fff;
@@ -67,3 +67,27 @@ line-height: 24px; }
 }
 
 #tab-description > iframe { width: 100%; }
+
+.alert {margin-left:-5px; margin-right: -5px;}
+.alert-dismissable .close, .alert-dismissible .close {
+    position: relative;
+    top: 0px; 
+    right: 0px;
+    color: inherit;
+}
+
+.btn-danger { border:none !important}
+
+.form-control { height:32px;}
+
+.img-thumbnail {
+    padding: 0px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: none;
+    border-radius: 0px;
+}
+
+.panel-default>.panel-heading {
+    background-color: #fff;
+}

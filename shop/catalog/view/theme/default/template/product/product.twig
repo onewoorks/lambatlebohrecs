@@ -15,9 +15,9 @@
     {% endif %}
     <div id="content" class="{{ class }}">{{ content_top }}
       <div class="row"> {% if column_left or column_right %}
-        {% set class = 'col-sm-6' %}
+        {% set class = 'col-sm-7' %}
         {% else %}
-        {% set class = 'col-sm-6' %}
+        {% set class = 'col-sm-7' %}
         {% endif %}
         
         <div class="{{ class }}"> {% if thumb or images %}
@@ -41,9 +41,9 @@
           
         </div>
         {% if column_left or column_right %}
-        {% set class = 'col-sm-6' %}
+        {% set class = 'col-sm-5' %}
         {% else %}
-        {% set class = 'col-sm-6' %}
+        {% set class = 'col-sm-5' %}
         {% endif %}
         <div class="{{ class }}">
           <div class="btn-group hidden">

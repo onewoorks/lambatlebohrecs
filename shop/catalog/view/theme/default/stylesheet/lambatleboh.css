@@ -66,5 +66,4 @@ line-height: 24px; }
     line-height: 20px;
 }
 
-iframe[title='YouTube video player']
-{ width: 100%; }
+#tab-description > iframe { width: 100%; }

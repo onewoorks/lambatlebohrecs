@@ -14,29 +14,51 @@
     {% set class = 'col-sm-12' %}
     {% endif %}
     <div id="content" class="{{ class }}">{{ content_top }}
-      <div class="row"> {% if column_left or column_right %}
-        {% set class = 'col-sm-7' %}
+      <div class="row-fluid"> {% if column_left or column_right %}
+        {% set class = 'col-sm-7 col-xs-12' %}
         {% else %}
         {% set class = 'col-sm-7' %}
         {% endif %}
         
         <div class="{{ class }}"> {% if thumb or images %}
-          <ul class="thumbnails">
+          <div class="row hidden-xs">
+            <div class="thumbnails">
             {% if thumb %}
             {% if images %}
             <div class="col-sm-2">
               {% for image in images %}
-                <li class="image-additional"><a class="thumbnail" href="{{ image.popup }}" title="{{ heading_title }}"> <img src="{{ image.thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}" /></a></li>
+                <div class="image-additional"><a class="thumbnail" href="{{ image.popup }}" title="{{ heading_title }}"> <img src="{{ image.thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}" /></a></div>
               {% endfor %}
             </div>
             {% endif %}
-            <div class="{{ images|length > 0 ? 'col-sm-10' : 'col-sm-12' }}">
-              <li><a class="thumbnail" href="{{ popup }}" title="{{ heading_title }}"><img src="{{ thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}" /></a></li>
+            <div class="{{ images|length > 0 ? 'col-sm-10 col-xs-12' : 'col-sm-12' }}">
+              <div><a class="thumbnail" href="{{ popup }}" title="{{ heading_title }}"><img src="{{ thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}" /></a></div>
             </div>
             
             {% endif %}
             
-          </ul>
+          </div>
+          </div>
+          <div class="visible-xs">
+            <div class="row">
+              <div class="col-xs-12">
+                <a class="thumbnail" href="{{ popup }}" title="{{ heading_title }}"><img src="{{ thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}" /></a>
+              </div>
+            </div>
+
+            <div class="row">
+            {% if images %}
+              {% for image in images %}
+                <div class="col-xs-4">
+                  <a class="thumbnail" href="{{ image.popup }}" title="{{ heading_title }}"> <img src="{{ image.thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}" /></a>
+                </div>
+              {% endfor %}
+            {% endif %}
+            </div>
+
+          </div>
+
+          
           {% endif %}
           
         </div>
@@ -277,7 +299,7 @@
             </div>
             {% endif %}
             <div class="row">
-              <div class="col-sm-3">
+              <div class="col-xs-3">
                 <div class="form-group">
                 <label class="control-label" for="input-quantity">{{ entry_qty }}</label>
                 <input type="text" name="quantity" value="{{ minimum }}" size="2" id="input-quantity" 
@@ -285,7 +307,7 @@
                 <input type="hidden" name="product_id" value="{{ product_id }}" />
                 </div>
               </div>
-              <div class="col-sm-4">
+              <div class="col-sm-4 col-xs-9">
                 <div class="form-group">
                 <label class="control-label">&nbsp;</label>
                 <button type="button" id="button-cart" data-loading-text="{{ text_loading }}" class="btn btn-primary btn-lg btn-block">{{ button_cart }}</button>

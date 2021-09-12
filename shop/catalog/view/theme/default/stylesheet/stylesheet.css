@@ -427,6 +427,8 @@ footer h5 {
 }
 .btn-default {
 	color: #777;
+	background-repeat: repeat-x;
+	border-color: #dddddd #dddddd #b3b3b3 #b7b7b7;
 }
 .btn-primary {
 	background-color: #000;
@@ -699,7 +701,7 @@ h2.price {
 	/* max-width: 78px; */
 }
 .thumbnails .image-additional {
-	float: left;
+	/* float: left; */
 	/* margin-left: 20px; */
 }
 

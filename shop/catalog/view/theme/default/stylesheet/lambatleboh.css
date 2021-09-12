@@ -19,13 +19,14 @@
     position: fixed;
     height: 76px;
     top: 0;
-    z-index: 10000;
+    z-index: 1;
     background-color: #fff;
     width: 100%;
     /* border-bottom: 1px solid #ddd; */
     -webkit-box-shadow: 0 1px 20px 1px rgba(0,0,0,.1);
 	box-shadow: 0 1px 20px 1px rgba(0,0,0,.1);
 }
+.llb-content { margin-top:100px;}
 
 .logo {
     padding:5px;
@@ -93,4 +94,26 @@ line-height: 24px; }
 
 .panel-default>.panel-heading {
     background-color: #fff;
+}
+
+@media (max-width: 768px){
+    #llb-header { 
+        height:30px;
+        font-size:26px;
+    }
+    #llb-header ::after {
+        margin-top:40px;
+    }
+    .llb-content { margin-top: 20px;}
+    footer {
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    .thumbnails {
+        margin-left: 0;
+    }
+    .thumbnails > div[class^='col-']{
+        padding:0;margin:0;
+    }
 }

@@ -15,31 +15,38 @@
     {% endif %}
     <div id="content" class="{{ class }}">{{ content_top }}
       <div class="row"> {% if column_left or column_right %}
-        {% set class = 'col-sm-6' %}
+        {% set class = 'col-sm-7' %}
         {% else %}
-        {% set class = 'col-sm-6' %}
+        {% set class = 'col-sm-7' %}
         {% endif %}
+        
         <div class="{{ class }}"> {% if thumb or images %}
           <ul class="thumbnails">
             {% if thumb %}
-            <li><a class="thumbnail" href="{{ popup }}" title="{{ heading_title }}"><img src="{{ thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}" /></a></li>
-            {% endif %}
             {% if images %}
-            {% for image in images %}
-            <li class="image-additional"><a class="thumbnail" href="{{ image.popup }}" title="{{ heading_title }}"> <img src="{{ image.thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}" /></a></li>
-            {% endfor %}
+            <div class="col-sm-2">
+              {% for image in images %}
+                <li class="image-additional"><a class="thumbnail" href="{{ image.popup }}" title="{{ heading_title }}"> <img src="{{ image.thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}" /></a></li>
+              {% endfor %}
+            </div>
             {% endif %}
+            <div class="{{ images|length > 0 ? 'col-sm-10' : 'col-sm-12' }}">
+              <li><a class="thumbnail" href="{{ popup }}" title="{{ heading_title }}"><img src="{{ thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}" /></a></li>
+            </div>
+            
+            {% endif %}
+            
           </ul>
           {% endif %}
           
         </div>
         {% if column_left or column_right %}
-        {% set class = 'col-sm-6' %}
+        {% set class = 'col-sm-5' %}
         {% else %}
-        {% set class = 'col-sm-6' %}
+        {% set class = 'col-sm-5' %}
         {% endif %}
         <div class="{{ class }}">
-          <div class="btn-group">
+          <div class="btn-group hidden">
             <button type="button" data-toggle="tooltip" class="btn btn-default" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product_id }}');"><i class="fa fa-heart"></i></button>
             <button type="button" data-toggle="tooltip" class="btn btn-default" title="{{ button_compare }}" onclick="compare.add('{{ product_id }}');"><i class="fa fa-exchange"></i></button>
           </div>

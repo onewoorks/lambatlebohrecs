@@ -4,7 +4,7 @@
     <div class="product-thumb transition">
       <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
       <div class="caption">
-        <h4><a href="{{ product.href }}">{{ product.name }}</a></h4>
+        <h4><a href="{{ product.href }}">{{ product.name|slice(0,70) | trim(' ') }}{{ product.name|length > 70 ? '...' : '' }}</a></h4>
         <p class="hidden">{{ product.description }}</p>
         {% if product.rating %}
         <div class="rating">{% for i in 1..5 %}

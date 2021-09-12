@@ -332,7 +332,7 @@ footer {
 	margin-top: 30px;
 	padding-top: 30px;
 	/* background-color: #303030; */
-	border-top: 1px solid #ddd;
+	/* border-top: 1px solid #ddd; */
 	/* color: #e2e2e2; */
 }
 footer hr {
@@ -573,7 +573,7 @@ footer h5 {
 	font-weight: 700;
 	font-size:14px;
 	color:#5e5e5e !important;
-	height: 25px;
+	height: 35px;
 }
 .product-thumb .caption {
 	text-align: center;
@@ -698,16 +698,14 @@ h2.price {
 }
 .image-additional a {
 	margin-bottom: 20px;
-	padding: 5px;
 	display: block;
-	border: 1px solid #ddd;
 }
 .image-additional {
-	max-width: 78px;
+	/* max-width: 78px; */
 }
 .thumbnails .image-additional {
 	float: left;
-	margin-left: 20px;
+	/* margin-left: 20px; */
 }
 
 @media (min-width: 1200px) {

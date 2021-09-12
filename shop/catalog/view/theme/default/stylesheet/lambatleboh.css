@@ -61,3 +61,7 @@ line-height: 24px; }
     top: 36%;
     left: 37%;
 }
+
+.caption > h4 {
+    line-height: 20px;
+}

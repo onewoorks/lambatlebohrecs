@@ -1,6 +1,6 @@
 <h3 class="hidden">{{ heading_title }}</h3>
 <div class="row"> {% for product in products %}
-  <div class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-12">
+  <div class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-6">
     <div class="product-thumb transition">
       <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
       <div class="caption">
@@ -17,11 +17,21 @@
           {% else %} <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span> {% endif %}
           {% if product.tax %} <span class="price-tax">{{ text_tax }} {{ product.tax }}</span> {% endif %} </p>
         {% endif %} </div>
-      <div class="button-group hidden">
-        <button type="button" onclick="cart.add('{{ product.product_id }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
-        <button type="button" data-toggle="tooltip" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product.product_id }}');"><i class="fa fa-heart"></i></button>
-        <button type="button" data-toggle="tooltip" title="{{ button_compare }}" onclick="compare.add('{{ product.product_id }}');"><i class="fa fa-exchange"></i></button>
-      </div>
+      
     </div>
+    <div class="hover-add-cart-{ product.product_id }} hidden">
+        <button type="button" 
+        onclick="cart.add('{{ product.product_id }}');">
+        <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+      </div>
   </div>
   {% endfor %} </div>
+
+<script type="text/javascript">
+  $('.product-thumb').on('mouseover', function(){
+    $('.hover-add-cart').removeClass('hidden')
+  })
+  $('.product-thumb').on('mouseout', function(){
+    $('.hover-add-cart').addClass('hidden')
+  })
+</script>

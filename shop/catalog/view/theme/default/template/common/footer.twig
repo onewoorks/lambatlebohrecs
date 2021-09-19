@@ -1,37 +1,27 @@
-<footer>
+ <footer>
   <div class="container text-center">
-    <div class="row">
+    <div>
+      <i class="fa fa-instagram" style="font-size:1.8em" aria-hidden="true"></i>
+      <i class="fa fa-whatsapp" style="font-size:1.8em; margin-left:10px" aria-hidden="true"></i>
+    </div>
+    <div>
+      <a href="{{ contact }}">{{ text_contact }}</a>
+    </div>
+    <div>{{ powered }}</div>
+    <div style="font-size:0.9em">
       {% if informations %}
-      <div class="col-sm-4">
-        <h5>{{ text_information }}</h5>
-        <ul class="list-unstyled">
+        <ul class="list-inline list-unstyled">
          {% for information in informations %}
           <li><a href="{{ information.href }}">{{ information.title }}</a></li>
+          {% if not loop.last %}
+          <li>|</li>
+          {% endif %}
           {% endfor %}
-        </ul>
-      </div>
       {% endif %}
-      <div class="col-sm-4">
-        <h5>{{ text_service }}</h5>
-        <ul class="list-unstyled">
-          <li><a href="{{ contact }}">{{ text_contact }}</a></li>
-          <li><a href="{{ return }}">{{ text_return }}</a></li>
-          <li><a href="{{ sitemap }}">{{ text_sitemap }}</a></li>
-        </ul>
-      </div>
-      <div class="col-sm-4">
-        <h5>{{ text_account }}</h5>
-        <ul class="list-unstyled">
-          <li><a href="{{ account }}">{{ text_account }}</a></li>
-          <li><a href="{{ order }}">{{ text_order }}</a></li>
-          <li><a href="{{ newsletter }}">{{ text_newsletter }}</a></li>
-        </ul>
-      </div>
-    </div>
-    <hr>
-    <p>{{ powered }}</p>
   </div>
-</footer>
+  </div>
+  
+ </footer>
 {% for style in styles %}
 <link href="{{ style.href }}" type="text/css" rel="{{ style.rel }}" media="{{ style.media }}" />
 {% endfor %}

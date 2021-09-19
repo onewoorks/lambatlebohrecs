@@ -73,7 +73,7 @@
             <button type="button" data-toggle="tooltip" class="btn btn-default" title="{{ button_compare }}" onclick="compare.add('{{ product_id }}');"><i class="fa fa-exchange"></i></button>
           </div>
           <h1>{{ heading_title }}</h1>
-          <ul class="list-unstyled">
+          <ul class="list-unstyled hidden">
             {% if manufacturer %}
             <li>{{ text_manufacturer }} <a href="{{ manufacturers }}">{{ manufacturer }}</a></li>
             {% endif %}
@@ -87,7 +87,7 @@
           <ul class="list-unstyled">
             {% if not special %}
             <li>
-              <h2>{{ price }}</h2>
+              <h2 style="font-size:1.6em">{{ price }}</h2>
             </li>
             {% else %}
             <li><span style="text-decoration: line-through;">{{ price }}</span></li>
@@ -112,8 +112,15 @@
           </ul>
           {% endif %}
 
+          {% if tags %}
+        <p>{{ text_tags }}
+        {% for i in 0..tags|length - 1 %}
+        {% if i < (tags|length - 1) %} <a href="{{ tags[i].href }}">{{ tags[i].tag }}</a>,
+        {% else %} <a href="{{ tags[i].href }}">{{ tags[i].tag }}</a> {% endif %}
+        {% endfor %} </p>
+        {% endif %}
           
-          <div class="tab-content">
+          <div class="tab-content" style="margin-top:50px;">
             <div class="tab-pane active" id="tab-description">{{ description }}</div>
             {% if attribute_groups %}
             <div class="tab-pane" id="tab-specification">
@@ -314,6 +321,20 @@
                 </div>
               </div>
             </div>
+
+            <div class="row">
+              <div class="col-xs-12" style="margin-left: -13px">
+                <!-- AddThis Button BEGIN -->
+                <div class="addthis_toolbox addthis_default_style" data-url="{{ share }}">
+                  <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a> 
+                  <a class="addthis_button_tweet"></a> 
+                  <a class="addthis_button_pinterest_pinit"></a> 
+                  <a class="addthis_counter addthis_pill_style"></a>
+                </div>
+                <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-515eeaf54693130e"></script> 
+                <!-- AddThis Button END --> 
+              </div>
+            </div>
             
               
             </div>
@@ -321,6 +342,7 @@
             <div class="alert alert-info"><i class="fa fa-info-circle"></i> {{ text_minimum }}</div>
             {% endif %}</div>
             </div>
+      
       </div>
       {% if products %}
       <h3>{{ text_related }}</h3>
@@ -355,6 +377,8 @@
               <button type="button" data-toggle="tooltip" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product.product_id }}');"><i class="fa fa-heart"></i></button>
               <button type="button" data-toggle="tooltip" title="{{ button_compare }}" onclick="compare.add('{{ product.product_id }}');"><i class="fa fa-exchange"></i></button>
             </div>
+
+            
           </div>
         </div>
         {% if column_left and column_right and (i + 1) % 2 == 0 %}
@@ -367,13 +391,7 @@
         {% set i = i + 1 %}
         {% endfor %} </div>
         {% endif %}
-        {% if tags %}
-        <p>{{ text_tags }}
-        {% for i in 0..tags|length - 1 %}
-        {% if i < (tags|length - 1) %} <a href="{{ tags[i].href }}">{{ tags[i].tag }}</a>,
-        {% else %} <a href="{{ tags[i].href }}">{{ tags[i].tag }}</a> {% endif %}
-        {% endfor %} </p>
-        {% endif %}
+        
       {{ content_bottom }}</div>
     {{ column_right }}</div>
 </div>

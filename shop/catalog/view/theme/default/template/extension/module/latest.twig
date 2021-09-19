@@ -2,6 +2,9 @@
 <div class="row"> {% for product in products %}
   <div class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-6">
     <div class="product-thumb transition">
+    {% if product.tag != '' %}
+    <div class="product-tag">{{ product.tag }}</div>
+    {% endif %}
       <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
       <div class="caption">
         <h4><a href="{{ product.href }}">{{ product.name|slice(0,50) | trim(' ') }}{{ product.name|length > 50 ? '...' : '' }}</a></h4>

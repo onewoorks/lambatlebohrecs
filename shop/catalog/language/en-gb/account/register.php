@@ -1,6 +1,6 @@
 <?php
 // Heading
-$_['heading_title']        = 'Register Account';
+$_['heading_title']        = 'Create Account';
 
 // Text
 $_['text_account']         = 'Account';

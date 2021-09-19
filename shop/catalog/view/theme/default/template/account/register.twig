@@ -14,11 +14,12 @@
     {% elseif column_left or column_right %}
     {% set class = 'col-sm-9' %}
     {% else %}
-    {% set class = 'col-sm-12' %}
+    {% set class = 'col-sm-push-4 col-sm-4' %}
     {% endif %}
-    <div id="content" class="{{ class }}">{{ content_top }}
-      <h1>{{ heading_title }}</h1>
-      <p>{{ text_account_already }}</p>
+    <div id="content" class="{{ class }}" >{{ content_top }}
+      <h1 class="text-center">{{ heading_title }}</h1>
+      <p class="hide">{{ text_account_already }}</p>
+      <div style="border:1px solid #ccc; padding:20px;">
       <form action="{{ action }}" method="post" enctype="multipart/form-data" class="form-horizontal">
         <fieldset id="account">
           <legend>{{ text_your_details }}</legend>
@@ -41,32 +42,31 @@
               {% endfor %}</div>
           </div>
           <div class="form-group required">
-            <label class="col-sm-2 control-label" for="input-firstname">{{ entry_firstname }}</label>
-            <div class="col-sm-10">
+            
+            <div class="col-sm-6">
               <input type="text" name="firstname" value="{{ firstname }}" placeholder="{{ entry_firstname }}" id="input-firstname" class="form-control" />
               {% if error_firstname %}
               <div class="text-danger">{{ error_firstname }}</div>
               {% endif %} </div>
-          </div>
-          <div class="form-group required">
-            <label class="col-sm-2 control-label" for="input-lastname">{{ entry_lastname }}</label>
-            <div class="col-sm-10">
+          
+            <div class="col-sm-6">
               <input type="text" name="lastname" value="{{ lastname }}" placeholder="{{ entry_lastname }}" id="input-lastname" class="form-control" />
               {% if error_lastname %}
               <div class="text-danger">{{ error_lastname }}</div>
               {% endif %} </div>
           </div>
+
           <div class="form-group required">
-            <label class="col-sm-2 control-label" for="input-email">{{ entry_email }}</label>
-            <div class="col-sm-10">
+            
+            <div class="col-sm-12">
               <input type="email" name="email" value="{{ email }}" placeholder="{{ entry_email }}" id="input-email" class="form-control" />
               {% if error_email %}
               <div class="text-danger">{{ error_email }}</div>
               {% endif %} </div>
           </div>
           <div class="form-group required">
-            <label class="col-sm-2 control-label" for="input-telephone">{{ entry_telephone }}</label>
-            <div class="col-sm-10">
+            
+            <div class="col-sm-12">
               <input type="tel" name="telephone" value="{{ telephone }}" placeholder="{{ entry_telephone }}" id="input-telephone" class="form-control" />
               {% if error_telephone %}
               <div class="text-danger">{{ error_telephone }}</div>
@@ -237,25 +237,22 @@
           {% endfor %}
         </fieldset>
         <fieldset>
-          <legend>{{ text_your_password }}</legend>
           <div class="form-group required">
-            <label class="col-sm-2 control-label" for="input-password">{{ entry_password }}</label>
-            <div class="col-sm-10">
+            <div class="col-sm-12">
               <input type="password" name="password" value="{{ password }}" placeholder="{{ entry_password }}" id="input-password" class="form-control" />
               {% if error_password %}
               <div class="text-danger">{{ error_password }}</div>
               {% endif %} </div>
           </div>
           <div class="form-group required">
-            <label class="col-sm-2 control-label" for="input-confirm">{{ entry_confirm }}</label>
-            <div class="col-sm-10">
+            <div class="col-sm-12">
               <input type="password" name="confirm" value="{{ confirm }}" placeholder="{{ entry_confirm }}" id="input-confirm" class="form-control" />
               {% if error_confirm %}
               <div class="text-danger">{{ error_confirm }}</div>
               {% endif %} </div>
           </div>
         </fieldset>
-        <fieldset>
+        <fieldset class="hidden">
           <legend>{{ text_newsletter }}</legend>
           <div class="form-group">
             <label class="col-sm-2 control-label">{{ entry_newsletter }}</label>
@@ -279,24 +276,28 @@
         {{ captcha }}
         {% if text_agree %}
         <div class="buttons">
-          <div class="pull-right">{{ text_agree }}
+          <div class="pull-right">
+          {{ text_agree }}
             {% if agree %}
-            <input type="checkbox" name="agree" value="1" checked="checked" />
-            {% else %}
             <input type="checkbox" name="agree" value="1" />
+            {% else %}
+            <input type="checkbox" name="agree" value="1" checked="checked"  />
             {% endif %}
             &nbsp;
+            </div>
             <input type="submit" value="{{ button_continue }}" class="btn btn-primary" />
-          </div>
         </div>
         {% else %}
+        <p>
+        By signing up, I agree to the Lambat leboh Records  <a href="">Term of Service</a>, 
+        <a href="#">Privacy Policy</a> and <a href="#">Refund Policy</a>
+        </p>
         <div class="buttons">
-          <div class="pull-right">
-            <input type="submit" value="{{ button_continue }}" class="btn btn-primary" />
-          </div>
+            <input type="submit" value="{{ button_create }}" class="btn btn-primary btn-block" />
         </div>
         {% endif %}
       </form>
+      </div>
       {{ content_bottom }}</div>
     {{ column_right }}</div>
 </div>

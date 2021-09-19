@@ -45,6 +45,7 @@ a {
 }
 a:hover {
 	text-decoration: none;
+	background-color:#fff !important;
 }
 legend {
 	font-size: 18px;
@@ -80,9 +81,9 @@ div.required .control-label:before {
 /* Gradent to all drop down menus */
 .dropdown-menu li > a:hover {
 	text-decoration: none;
-	color: #ffffff;
-	background-color: #229ac8;
-	background-image: linear-gradient(to bottom, #23a1d1, #1f90bb);
+	color: #000;
+	/* background-color: #229ac8; */
+	/* background-image: linear-gradient(to bottom, #23a1d1, #1f90bb); */
 	background-repeat: repeat-x;
 }
 /* top */

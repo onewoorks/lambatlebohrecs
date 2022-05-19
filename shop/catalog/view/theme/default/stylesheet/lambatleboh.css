@@ -359,6 +359,13 @@ position: absolute;
     margin: 5px;
 }
 
+#search {
+    position: absolute;
+    right: 82px;
+    top: 29px;
+}
+#search .btn-lg {padding:8px}
+
 @media(max-width:767px){
     .mobile-add-to-cart {
         position: fixed;
@@ -382,7 +389,7 @@ position: absolute;
         color: #fff;
         position: absolute;
         top: 8px;
-        right: 42px;
+        right: 59px;
         width: 16px;
         padding: 0px;
         line-height: 16px;
@@ -436,6 +443,13 @@ position: absolute;
         overflow: auto;
         flex-direction: row;
     }
+
+    #search {
+            position: inherit;
+    /* right: 82px;
+    top: 29px; */
+    }
+    #search .btn-lg {padding:8px}
     
     
 }
@@ -445,10 +459,6 @@ position: absolute;
         display: block;
         padding: 10px 6px;
     }
-    
-    
-    
-    
 }
 
 @media(min-width:992px){

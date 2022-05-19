@@ -11,7 +11,7 @@
   </div>
   {% endif %}
   {% if success %}
-  <div class="alert alert-success alert-dismissible"><i class="fa fa-check-circle"></i> {{ success }}
+  <div class="alert alert-success alert-dismissible">{{ success }}
     <button type="button" class="close" data-dismiss="alert">&times;</button>
   </div>
   {% endif %}
@@ -31,16 +31,15 @@
     <div id="content" class="{{ class }}">{{ content_top }}
       <h1>{{ heading_title }}</h1>
       <form action="{{ action }}" method="post" enctype="multipart/form-data">
+
         <div class="table-responsive">
-          <table class="table table-bordered">
+          <table class="table">
             <thead>
               <tr>
                 <th class="text-center">{{ column_image }}</th>
                 <th class="text-left">{{ column_name }}</th>
-                <th class="text-left">{{ column_model }}</th>
-                <th class="text-left">{{ column_quantity }}</th>
-                <th class="text-right">{{ column_price }}</th>
-                <th class="text-right">{{ column_total }}</th>
+                <th class="text-right hidden-xs">{{ column_price }}</th>
+                <th class="text-right hidden-xs">{{ column_total }}</th>
               </tr>
             </thead>
             <tbody>
@@ -48,7 +47,7 @@
             {% for product in products %}
             <tr>
               <td style="vertical-align: middle" class="text-center">{% if product.thumb %} <a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-thumbnail" /></a> {% endif %}</td>
-              <td style="vertical-align: middle" class="text-left"><a href="{{ product.href }}">{{ product.name }}</a> {% if not product.stock %} <span class="text-danger">***</span> {% endif %}
+              <td style="vertical-align: top" class="text-left"><a href="{{ product.href }}">{{ product.name }}</a> {% if not product.stock %} <span class="text-danger">***</span> {% endif %}
                 {% if product.option %}
                 {% for option in product.option %} <br />
                 <small>{{ option.name }}: {{ option.value }}</small> {% endfor %}
@@ -56,30 +55,47 @@
                 {% if product.reward %} <br />
                 <small>{{ product.reward }}</small> {% endif %}
                 {% if product.recurring %} <br />
-                <span class="label label-info">{{ text_recurring_item }}</span> <small>{{ product.recurring }}</small> {% endif %}</td>
-              <td style="vertical-align: middle" class="text-left">{{ product.model }}</td>
-              <td style="vertical-align: middle" class="text-left"><div class="input-group btn-block" style="max-width: 200px;">
+                <span class="label label-info">{{ text_recurring_item }}</span> <small>{{ product.recurring }}</small> {% endif %}
+                
+                <div class="visible-xs">
+                    <table class="" style="margin-top:10px; width:100%">
+                        <tbody>
+                            <tr>
+                                <th>{{ column_price }}</th>
+                                <td class="text-right">{{ product.price}}</td>    
+                            </tr>
+                            <tr>
+                                <th>{{ column_total }}</th>
+                                <td class="text-right">{{ product.total}}</td>    
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+                <div class="" style="margin-top:10px">
+                    <div class="input-group btn-block" style="max-width: 200px;">
                   <input type="text" name="quantity[{{ product.cart_id }}]" value="{{ product.quantity }}" size="1" class="form-control" />
                   <span class="input-group-btn">
-                  <button type="submit" data-toggle="tooltip" title="{{ button_update }}" class="btn btn-primary"><i class="fa fa-refresh"></i></button>
-                  <button type="button" data-toggle="tooltip" title="{{ button_remove }}" class="btn btn-danger" onclick="cart.remove('{{ product.cart_id }}');"><i class="fa fa-times-circle"></i></button>
-                  </span></div></td>
-              <td style="vertical-align: middle" class="text-right">{{ product.price }}</td>
-              <td style="vertical-align: middle" class="text-right">{{ product.total }}</td>
+                    <button type="submit" data-toggle="tooltip" title="{{ button_update }}" class="btn btn-primary"><i class="fa fa-refresh"></i></button>
+                    <button type="button" data-toggle="tooltip" title="{{ button_remove }}" class="btn btn-danger" onclick="cart.remove('{{ product.cart_id }}');"><i class="fa fa-times-circle"></i></button>
+                  </span>
+                </div>
+                </td>
+              <td style="vertical-align: middle" class="text-right hidden-xs">{{ product.price }}</td>
+              <td style="vertical-align: middle" class="text-right hidden-xs">{{ product.total }}</td>
             </tr>
             {% endfor %}
             {% for voucher in vouchers %}
             <tr>
               <td></td>
               <td class="text-left">{{ voucher.description }}</td>
-              <td class="text-left"></td>
               <td class="text-left"><div class="input-group btn-block" style="max-width: 200px;">
                   <input type="text" name="" value="1" size="1" disabled="disabled" class="form-control" />
                   <span class="input-group-btn">
                   <button type="button" data-toggle="tooltip" title="{{ button_remove }}" class="btn btn-danger" onclick="voucher.remove('{{ voucher.key }}');"><i class="fa fa-times-circle"></i></button>
                   </span></div></td>
-              <td class="text-right">{{ voucher.amount }}</td>
-              <td class="text-right">{{ voucher.amount }}</td>
+              <td class="text-right hidden-xs">{{ voucher.amount }}</td>
+              <td class="text-right hidden-xs">{{ voucher.amount }}</td>
             </tr>
             {% endfor %}
               </tbody>
@@ -87,7 +103,7 @@
           </table>
         </div>
       </form>
-      <div class="hidden">
+      <div class="">
       {% if modules %}
       <h2>{{ text_next }}</h2>
       <p>{{ text_next_choice }}</p>
@@ -98,11 +114,11 @@
       </div>
       <div class="row">
         <div class="col-sm-4 col-sm-offset-8">
-          <table class="table table-bordered">
+          <table class="" style="width:100%; margin-bottom:20px">
             {% for total in totals %}
             <tr>
-              <td class="text-right"><strong>{{ total.title }}:</strong></td>
-              <td class="text-right">{{ total.text }}</td>
+              <td class="text-right" style="border-top: none;"><strong>{{ total.title }}:</strong></td>
+              <td class="text-right" style="border-top: none; width:104px; padding-right:10px">{{ total.text }}</td>
             </tr>
             {% endfor %}
           </table>

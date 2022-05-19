@@ -26,13 +26,17 @@
             {% if thumb %}
             {% if images %}
             <div class="col-sm-2">
-              {% for image in images %}
-                <div class="image-additional"><a class="thumbnail" href="{{ image.popup }}" title="{{ heading_title }}"> <img src="{{ image.thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}" /></a></div>
+              {% for key,image in images %}
+                <div class="image-additional" style="cursor:pointer">
+                    <div class="thumbnail" data-addid="{{ key }}" data-img="{{ image.popup }}" title="{{ heading_title }}"> 
+                        <img class="thumbnail-add" data-addid="{{ key }}" src="{{ image.thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}" />
+                    </div>
+                </div>
               {% endfor %}
             </div>
             {% endif %}
             <div class="{{ images|length > 0 ? 'col-sm-10 col-xs-12' : 'col-sm-12' }}">
-              <div><a class="thumbnail" href="{{ popup }}" title="{{ heading_title }}"><img src="{{ thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}" /></a></div>
+              <div class="thumbnail"><img class="thumbnail-main" src="{{ thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}" /></div>
             </div>
             
             {% endif %}
@@ -42,7 +46,7 @@
           <div class="visible-xs">
             <div class="row">
               <div class="col-xs-12">
-                <a class="thumbnail" href="{{ popup }}" title="{{ heading_title }}"><img src="{{ thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}" /></a>
+                <div class="thumbnail" data-img="{{ popup }}"><img class="thumbnail-xs" src="{{ thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}" /></div>
               </div>
             </div>
 
@@ -50,7 +54,7 @@
             {% if images %}
               {% for image in images %}
                 <div class="col-xs-4">
-                  <a class="thumbnail" href="{{ image.popup }}" title="{{ heading_title }}"> <img src="{{ image.thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}" /></a>
+                  <div class="thumbnail thumbnail-xs-add" data-img="{{ image.popup }}" title="{{ heading_title }}"> <img src="{{ image.thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}" /></div>
                 </div>
               {% endfor %}
             {% endif %}
@@ -305,7 +309,9 @@
               <div class="help-block" id="recurring-description"></div>
             </div>
             {% endif %}
-            <div class="row">
+            
+            {% if quantity > 0 %}
+            <div class="row mobile-add-to-cart">
               <div class="col-xs-3">
                 <div class="form-group">
                 <label class="control-label" for="input-quantity">{{ entry_qty }}</label>
@@ -314,15 +320,19 @@
                 <input type="hidden" name="product_id" value="{{ product_id }}" />
                 </div>
               </div>
-              <div class="col-sm-4 col-xs-9">
+              <div class="col-sm-6 col-xs-9 ">
+                  
                 <div class="form-group">
                 <label class="control-label">&nbsp;</label>
                 <button type="button" id="button-cart" data-loading-text="{{ text_loading }}" class="btn btn-primary btn-lg btn-block">{{ button_cart }}</button>
                 </div>
+                
               </div>
             </div>
+            {% endif %}
+            
 
-            <div class="row">
+            <div class="row hide">
               <div class="col-xs-12" style="margin-left: -13px">
                 <!-- AddThis Button BEGIN -->
                 <div class="addthis_toolbox addthis_default_style" data-url="{{ share }}">
@@ -342,6 +352,8 @@
             <div class="alert alert-info"><i class="fa fa-info-circle"></i> {{ text_minimum }}</div>
             {% endif %}</div>
             </div>
+            
+            
       
       </div>
       {% if products %}
@@ -417,6 +429,7 @@ $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
 //--></script> 
 <script type="text/javascript"><!--
 $('#button-cart').on('click', function() {
+    var item_in_cart = parseInt($('.item-in-cart').text())
 	$.ajax({
 		url: 'index.php?route=checkout/cart/add',
 		type: 'post',
@@ -461,6 +474,7 @@ $('#button-cart').on('click', function() {
 				$('html, body').animate({ scrollTop: 0 }, 'slow');
 
 				$('#cart > ul').load('index.php?route=common/cart/info ul li');
+				$('.item-in-cart').text(json['total_item'])
 			}
 		},
         error: function(xhr, ajaxOptions, thrownError) {
@@ -582,6 +596,26 @@ $('#button-review').on('click', function() {
 });
 
 $(document).ready(function() {
+    $('footer').addClass('mobile-add-to-cart-footer')
+    $('.image-additional>.thumbnail').on('click', function(){
+        var image_src = $(this).data('img')
+        var to_replace = $('.thumbnail-main').attr('src')
+        $('.thumbnail-main').fadeOut(function(){
+        $(this).attr('src',image_src)
+        $(this).fadeIn()
+        })
+    })
+    
+    $('.thumbnail-xs-add').on('click', function(){
+        var image_src = $(this).data('img')
+        var to_replace = $('.thumbnail-main').attr('src')
+        $('.thumbnail-xs').fadeOut(function(){
+        $(this).attr('src',image_src)
+        $(this).fadeIn()
+        })
+        
+    })
+    
 	$('.thumbnails').magnificPopup({
 		type:'image',
 		delegate: 'a',
@@ -589,6 +623,9 @@ $(document).ready(function() {
 			enabled: true
 		}
 	});
+	
+	var frame = $('iframe')
+	frame.width('100%')
 });
 //--></script> 
 {{ footer }} 

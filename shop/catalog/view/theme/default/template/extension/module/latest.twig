@@ -1,13 +1,35 @@
-<h3 class="hidden">{{ heading_title }}</h3>
-<div class="row"> {% for product in products %}
-  <div class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-6">
+<div class="container">
+<h3 class="text-center hvfont" style="text-transform:uppercase; margin-bottom:40px; font-weight:bold; line-height:42px; font-size:28px; color:#000">{{ heading_title }}</h3>
+<div class="row"> 
+  {% for ind,product in products %}
+  
+  <div class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-6" >
+    <div data-aos="fade-up"
+    data-aos-delay="{{ ind*50 }}"
+    data-aos-easing="ease-in-out"
+    data-aos-once="true">
     <div class="product-thumb transition">
     {% if product.tag != '' %}
     <div class="product-tag">{{ product.tag }}</div>
     {% endif %}
-      <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+    {% if product.quantity == 0 %}
+    <div class="soldout">Out of Stock</div>
+    {% endif %}
+    
+    {% if product.stock_stat == 'Pre-Order' and product.quantity > 0 %}
+    <div class="product-tag-preorder"><strong>{{ product.stock_stat }}</strong></div>
+    {% endif %}
+    
+      <div class="image">
+          <a href="{{ product.href }}">
+            {% if product.quantity == 0 %}
+            <img src="https://lambatlebohrecs.com/image/catalog/common/transparent-overlay.png" class="img-responsive soldout-overlay">
+            {% endif %}
+          <img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a>
+          </div>
       <div class="caption">
-        <h4><a href="{{ product.href }}">{{ product.name|slice(0,50) | trim(' ') }}{{ product.name|length > 50 ? '...' : '' }}</a></h4>
+        <h4 class="hidden-xs"><a href="{{ product.href }}">{{ product.name|slice(0,50) | trim(' ') }}{{ product.name|length > 50 ? '...' : '' }}</a></h4>
+        <h4 class="visible-xs"><a href="{{ product.href }}">{{ product.name|slice(0,30) | trim(' ') }}{{ product.name|length > 30 ? '...' : '' }}</a></h4>
         <p class="hidden">{{ product.description }}</p>
         {% if product.rating %}
         <div class="rating">{% for i in 1..5 %}
@@ -28,8 +50,10 @@
         <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
       </div>
   </div>
+  </div>
   {% endfor %} </div>
 
+</div>
 <script type="text/javascript">
   $('.product-thumb').on('mouseover', function(){
     $('.hover-add-cart').removeClass('hidden')
@@ -37,4 +61,5 @@
   $('.product-thumb').on('mouseout', function(){
     $('.hover-add-cart').addClass('hidden')
   })
+  AOS.refresh();
 </script>

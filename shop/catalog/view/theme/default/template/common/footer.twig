@@ -1,24 +1,75 @@
- <footer>
-  <div class="container text-center">
-    <div>
-      <i class="fa fa-instagram" style="font-size:1.8em" aria-hidden="true"></i>
-      <a href="https://wa.me/601111860760"><i class="fa fa-whatsapp" style="font-size:1.8em; margin-left:10px" aria-hidden="true"></i></a>
-    </div>
-    <div>
-      <a href="{{ contact }}">{{ text_contact }}</a>
-    </div>
-    <div>{{ powered }}</div>
-    <div style="font-size:0.9em">
-      {% if informations %}
-        <ul class="list-inline list-unstyled">
-         {% for information in informations %}
-          <li><a href="{{ information.href }}">{{ information.title }}</a></li>
-          {% if not loop.last %}
-          <li>|</li>
-          {% endif %}
-          {% endfor %}
-      {% endif %}
+ <footer style="font-size:0.9em">
+
+  <div class="container visible-lg visible-md visible-sm">
+      <div class='row' style="margin-bottom:20px">
+          <div class="col-lg-6 col-sm-6 col-md-6">
+              <div style="margin-top:30px">
+                  <section class='FlexContainer'>
+                    <div><a href="https://instagram.com/lambatlebohrecs" target="_blank">
+                      <i class="fa fa-instagram" style="font-size:2.1em;" aria-hidden="true"></i></div>
+                    <div><a href="https://twitter.com/lambatlebohrecs" target="_blank">
+                      <i class="fa fa-twitter" style="font-size:2.1em;" aria-hidden="true"></i></a></div>
+                    <div><a href="https://open.spotify.com/playlist/5StwVzF9WSmemcIeQtnvcZ?si=ZygzISZiTQere7nM73xFAg" target="_blank">
+                      <i class="fa fa-spotify" style="font-size:2.1em;" aria-hidden="true"></i></a></div>
+                    <div><a href="https://wa.me/601111860760" target="_blank"><i class="fa fa-whatsapp" style="font-size:2.1em;" aria-hidden="true"></i></a></div>
+                    {% if informations %}
+                      {% for information in informations %}
+                        <div><a href="{{ information.href }}">{{ information.title }}</a></div>
+                      {% endfor %}  
+                    {% endif %}
+                </section>
+              </div>
+          </div>
+          <div class="col-lg-4 col-lg-push-2 col-md-4 col-md-push-2 col-sm-6">
+              <img src='https://lambatlebohrecs.com/image/catalog/common/payment-gateway.png' class='img-responsive' />
+              <div class='text-right' style="line-height:16px; margin-top:8px">
+                <div>Copyright © Lambat Leboh Records {{ "now"|date("Y") }} | All Rights Reserved</div>
+                <div>Company registration number KT0502887H</div>
+                <div>Designed with love by <a href="https://onewoorks-solutions.com">onewoorks solutions</a></div>
+              </div>
+          </div>
+      </div>    
   </div>
+  
+  
+    <div class="container visible-xs text-center">
+      <div class='row'>
+          <div class="col-xs-12 text-center">
+              <div style="">
+                  <section class='FlexContainer'>
+                    <div><a href="https://instagram.com/lambatlebohrecs" target="_blank">
+                      <i class="fa fa-instagram" style="font-size:2.1em;" aria-hidden="true"></i></div>
+                    <div><a href="https://twitter.com/lambatlebohrecs" target="_blank">
+                      <i class="fa fa-twitter" style="font-size:2.1em;" aria-hidden="true"></i></a></div>
+                    <div><a href="https://open.spotify.com/playlist/5StwVzF9WSmemcIeQtnvcZ?si=ZygzISZiTQere7nM73xFAg" target="_blank">
+                      <i class="fa fa-spotify" style="font-size:2.1em;" aria-hidden="true"></i></a></div>
+                    <div><a href="https://wa.me/601111860760" target="_blank"><i class="fa fa-whatsapp" style="font-size:2.1em;" aria-hidden="true"></i></a></div>
+                    
+                </section>
+                
+                {% if informations %}
+                      {% for information in informations %}
+                        <div><a href="{{ information.href }}">{{ information.title }}</a></div>
+                      {% endfor %}  
+                    {% endif %}
+              </div>
+          </div>
+          
+          <div class="row">
+              <div class="col-xs-push-2 col-xs-8"  style="margin-top:20px; ">
+                <img src='https://lambatlebohrecs.com/image/catalog/common/payment-gateway.png' class='img-responsive' />
+              </div>
+          </div>
+          <div class="row">
+          <div class="col-xs-12">
+              <div style="line-height:16px; margin-top:8px">
+                <div>Copyright © Lambat Leboh Records {{ "now"|date("Y") }} | All Rights Reserved</div>
+                <div>Company registration number KT0502887H</div>
+                <div>Designed with love by <a href="https://onewoorks-solutions.com">onewoorks solutions</a></div>
+              </div>
+          </div>
+          </div>
+      </div>    
   </div>
   
  </footer>

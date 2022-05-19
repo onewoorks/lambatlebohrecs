@@ -1,0 +1,108 @@
+[20-Sep-2021 05:43:40 Asia/Kuala_Lumpur] PHP Warning:  require_once(/Users/iwang/Documents/Development/Projects/Lambatlebohrecs/lambatlebohrecs/shop/system/startup.php): failed to open stream: No such file or directory in /home/onewoork/lambatlebohrecs.com/shop/index.php on line 17
+[20-Sep-2021 05:43:40 Asia/Kuala_Lumpur] PHP Fatal error:  require_once(): Failed opening required '/Users/iwang/Documents/Development/Projects/Lambatlebohrecs/lambatlebohrecs/shop/system/startup.php' (include_path='.:/opt/alt/php73/usr/share/pear') in /home/onewoork/lambatlebohrecs.com/shop/index.php on line 17
+[20-Sep-2021 05:43:41 Asia/Kuala_Lumpur] PHP Warning:  require_once(/Users/iwang/Documents/Development/Projects/Lambatlebohrecs/lambatlebohrecs/shop/system/startup.php): failed to open stream: No such file or directory in /home/onewoork/lambatlebohrecs.com/shop/index.php on line 17
+[20-Sep-2021 05:43:41 Asia/Kuala_Lumpur] PHP Fatal error:  require_once(): Failed opening required '/Users/iwang/Documents/Development/Projects/Lambatlebohrecs/lambatlebohrecs/shop/system/startup.php' (include_path='.:/opt/alt/php73/usr/share/pear') in /home/onewoork/lambatlebohrecs.com/shop/index.php on line 17
+[20-Sep-2021 05:43:43 Asia/Kuala_Lumpur] PHP Warning:  require_once(/Users/iwang/Documents/Development/Projects/Lambatlebohrecs/lambatlebohrecs/shop/system/startup.php): failed to open stream: No such file or directory in /home/onewoork/lambatlebohrecs.com/shop/index.php on line 17
+[20-Sep-2021 05:43:43 Asia/Kuala_Lumpur] PHP Fatal error:  require_once(): Failed opening required '/Users/iwang/Documents/Development/Projects/Lambatlebohrecs/lambatlebohrecs/shop/system/startup.php' (include_path='.:/opt/alt/php73/usr/share/pear') in /home/onewoork/lambatlebohrecs.com/shop/index.php on line 17
+[20-Sep-2021 05:43:47 Asia/Kuala_Lumpur] PHP Warning:  require_once(/Users/iwang/Documents/Development/Projects/Lambatlebohrecs/lambatlebohrecs/shop/system/startup.php): failed to open stream: No such file or directory in /home/onewoork/lambatlebohrecs.com/shop/index.php on line 17
+[20-Sep-2021 05:43:47 Asia/Kuala_Lumpur] PHP Fatal error:  require_once(): Failed opening required '/Users/iwang/Documents/Development/Projects/Lambatlebohrecs/lambatlebohrecs/shop/system/startup.php' (include_path='.:/opt/alt/php73/usr/share/pear') in /home/onewoork/lambatlebohrecs.com/shop/index.php on line 17
+[20-Sep-2021 05:46:54 Asia/Kuala_Lumpur] PHP Warning:  require_once(/Users/iwang/Documents/Development/Projects/Lambatlebohrecs/lambatlebohrecs/shop/system/startup.php): failed to open stream: No such file or directory in /home/onewoork/lambatlebohrecs.com/shop/index.php on line 17
+[20-Sep-2021 05:46:54 Asia/Kuala_Lumpur] PHP Fatal error:  require_once(): Failed opening required '/Users/iwang/Documents/Development/Projects/Lambatlebohrecs/lambatlebohrecs/shop/system/startup.php' (include_path='.:/opt/alt/php73/usr/share/pear') in /home/onewoork/lambatlebohrecs.com/shop/index.php on line 17
+[20-Sep-2021 05:46:59 Asia/Kuala_Lumpur] PHP Warning:  require_once(/Users/iwang/Documents/Development/Projects/Lambatlebohrecs/lambatlebohrecs/shop/system/startup.php): failed to open stream: No such file or directory in /home/onewoork/lambatlebohrecs.com/shop/index.php on line 17
+[20-Sep-2021 05:46:59 Asia/Kuala_Lumpur] PHP Fatal error:  require_once(): Failed opening required '/Users/iwang/Documents/Development/Projects/Lambatlebohrecs/lambatlebohrecs/shop/system/startup.php' (include_path='.:/opt/alt/php73/usr/share/pear') in /home/onewoork/lambatlebohrecs.com/shop/index.php on line 17
+[20-Sep-2021 05:47:19 Asia/Kuala_Lumpur] PHP Warning:  require_once(/Users/iwang/Documents/Development/Projects/Lambatlebohrecs/lambatlebohrecs/shop/system/startup.php): failed to open stream: No such file or directory in /home/onewoork/lambatlebohrecs.com/shop/index.php on line 17
+[20-Sep-2021 05:47:19 Asia/Kuala_Lumpur] PHP Fatal error:  require_once(): Failed opening required '/Users/iwang/Documents/Development/Projects/Lambatlebohrecs/lambatlebohrecs/shop/system/startup.php' (include_path='.:/opt/alt/php73/usr/share/pear') in /home/onewoork/lambatlebohrecs.com/shop/index.php on line 17
+[20-Sep-2021 05:48:48 Asia/Kuala_Lumpur] PHP Warning:  require_once(/Users/iwang/Documents/Development/Projects/Lambatlebohrecs/lambatlebohrecs/shop/system/startup.php): failed to open stream: No such file or directory in /home/onewoork/lambatlebohrecs.com/shop/index.php on line 17
+[20-Sep-2021 05:48:48 Asia/Kuala_Lumpur] PHP Fatal error:  require_once(): Failed opening required '/Users/iwang/Documents/Development/Projects/Lambatlebohrecs/lambatlebohrecs/shop/system/startup.php' (include_path='.:/opt/alt/php73/usr/share/pear') in /home/onewoork/lambatlebohrecs.com/shop/index.php on line 17
+[20-Sep-2021 05:48:50 Asia/Kuala_Lumpur] PHP Warning:  require_once(/Users/iwang/Documents/Development/Projects/Lambatlebohrecs/lambatlebohrecs/shop/system/startup.php): failed to open stream: No such file or directory in /home/onewoork/lambatlebohrecs.com/shop/index.php on line 17
+[20-Sep-2021 05:48:50 Asia/Kuala_Lumpur] PHP Fatal error:  require_once(): Failed opening required '/Users/iwang/Documents/Development/Projects/Lambatlebohrecs/lambatlebohrecs/shop/system/startup.php' (include_path='.:/opt/alt/php73/usr/share/pear') in /home/onewoork/lambatlebohrecs.com/shop/index.php on line 17
+[04-Oct-2021 16:58:41 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Exception: Error: Operand should contain 1 column(s)<br />Error No: 1241<br />SELECT p.product_id, pd.tag, (SELECT AVG(rating) AS total, p.quantity as quantity 
+		FROM ocg0_review r1 WHERE r1.product_id = p.product_id AND r1.status = '1' GROUP BY r1.product_id) AS rating, (SELECT price FROM ocg0_product_discount pd2 WHERE pd2.product_id = p.product_id AND pd2.customer_group_id = '1' AND pd2.quantity = '1' AND ((pd2.date_start = '0000-00-00' OR pd2.date_start < NOW()) AND (pd2.date_end = '0000-00-00' OR pd2.date_end > NOW())) ORDER BY pd2.priority ASC, pd2.price ASC LIMIT 1) AS discount, (SELECT price FROM ocg0_product_special ps WHERE ps.product_id = p.product_id AND ps.customer_group_id = '1' AND ((ps.date_start = '0000-00-00' OR ps.date_start < NOW()) AND (ps.date_end = '0000-00-00' OR ps.date_end > NOW())) ORDER BY ps.priority ASC, ps.price ASC LIMIT 1) AS special FROM ocg0_product_to_category p2c LEFT JOIN ocg0_product p ON (p2c.product_id = p.product_id) LEFT JOIN ocg0_product_description pd ON  in /home/onewoork/lambatlebohrecs.com/shop/system/library/db/mysqli.php on line 41
+[08-Dec-2021 11:33:28 UTC] PHP Fatal error:  Uncaught Exception: Error: Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (111)<br />Error No: 2002 in /home/onewoork/lambatlebohrecs.com/shop/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/onewoork/lambatlebohrecs.com/shop/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'onewoork_ocar67...', '-52Cx8c@Sp', 'onewoork_ocar67...', '3306')
+#1 /home/onewoork/lambatlebohrecs.com/shop/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'onewoork_ocar67...', '-52Cx8c@Sp', 'onewoork_ocar67...', '3306')
+#2 /home/onewoork/lambatlebohrecs.com/shop/system/startup.php(104): require_once('/home/onewoork/...')
+#3 /home/onewoork/lambatlebohrecs.com/shop/index.php(19): start('catalog')
+#4 {main}
+  thrown in /home/onewoork/lambatlebohrecs.com/shop/system/library/db/mysqli.php on line 10
+[08-Dec-2021 11:33:28 UTC] PHP Fatal error:  Uncaught Exception: Error: Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (111)<br />Error No: 2002 in /home/onewoork/lambatlebohrecs.com/shop/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/onewoork/lambatlebohrecs.com/shop/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'onewoork_ocar67...', '-52Cx8c@Sp', 'onewoork_ocar67...', '3306')
+#1 /home/onewoork/lambatlebohrecs.com/shop/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'onewoork_ocar67...', '-52Cx8c@Sp', 'onewoork_ocar67...', '3306')
+#2 /home/onewoork/lambatlebohrecs.com/shop/system/startup.php(104): require_once('/home/onewoork/...')
+#3 /home/onewoork/lambatlebohrecs.com/shop/index.php(19): start('catalog')
+#4 {main}
+  thrown in /home/onewoork/lambatlebohrecs.com/shop/system/library/db/mysqli.php on line 10
+[21-Dec-2021 04:03:12 UTC] PHP Fatal error:  Uncaught Exception: Error: Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2)<br />Error No: 2002 in /home/onewoork/lambatlebohrecs.com/shop/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/onewoork/lambatlebohrecs.com/shop/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'onewoork_ocar67...', '-52Cx8c@Sp', 'onewoork_ocar67...', '3306')
+#1 /home/onewoork/lambatlebohrecs.com/shop/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'onewoork_ocar67...', '-52Cx8c@Sp', 'onewoork_ocar67...', '3306')
+#2 /home/onewoork/lambatlebohrecs.com/shop/system/startup.php(104): require_once('/home/onewoork/...')
+#3 /home/onewoork/lambatlebohrecs.com/shop/index.php(19): start('catalog')
+#4 {main}
+  thrown in /home/onewoork/lambatlebohrecs.com/shop/system/library/db/mysqli.php on line 10
+[26-Dec-2021 10:08:36 UTC] PHP Fatal error:  Uncaught Exception: Error: Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (111)<br />Error No: 2002 in /home/onewoork/lambatlebohrecs.com/shop/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/onewoork/lambatlebohrecs.com/shop/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'onewoork_ocar67...', '-52Cx8c@Sp', 'onewoork_ocar67...', '3306')
+#1 /home/onewoork/lambatlebohrecs.com/shop/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'onewoork_ocar67...', '-52Cx8c@Sp', 'onewoork_ocar67...', '3306')
+#2 /home/onewoork/lambatlebohrecs.com/shop/system/startup.php(104): require_once('/home/onewoork/...')
+#3 /home/onewoork/lambatlebohrecs.com/shop/index.php(19): start('catalog')
+#4 {main}
+  thrown in /home/onewoork/lambatlebohrecs.com/shop/system/library/db/mysqli.php on line 10
+[24-Jan-2022 02:37:50 UTC] PHP Fatal error:  Uncaught Exception: Error: Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (111)<br />Error No: 2002 in /home/onewoork/lambatlebohrecs.com/shop/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/onewoork/lambatlebohrecs.com/shop/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'onewoork_ocar67...', '-52Cx8c@Sp', 'onewoork_ocar67...', '3306')
+#1 /home/onewoork/lambatlebohrecs.com/shop/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'onewoork_ocar67...', '-52Cx8c@Sp', 'onewoork_ocar67...', '3306')
+#2 /home/onewoork/lambatlebohrecs.com/shop/system/startup.php(104): require_once('/home/onewoork/...')
+#3 /home/onewoork/lambatlebohrecs.com/shop/index.php(19): start('catalog')
+#4 {main}
+  thrown in /home/onewoork/lambatlebohrecs.com/shop/system/library/db/mysqli.php on line 10
+[24-Jan-2022 02:37:51 UTC] PHP Fatal error:  Uncaught Exception: Error: Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (111)<br />Error No: 2002 in /home/onewoork/lambatlebohrecs.com/shop/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/onewoork/lambatlebohrecs.com/shop/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'onewoork_ocar67...', '-52Cx8c@Sp', 'onewoork_ocar67...', '3306')
+#1 /home/onewoork/lambatlebohrecs.com/shop/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'onewoork_ocar67...', '-52Cx8c@Sp', 'onewoork_ocar67...', '3306')
+#2 /home/onewoork/lambatlebohrecs.com/shop/system/startup.php(104): require_once('/home/onewoork/...')
+#3 /home/onewoork/lambatlebohrecs.com/shop/index.php(19): start('catalog')
+#4 {main}
+  thrown in /home/onewoork/lambatlebohrecs.com/shop/system/library/db/mysqli.php on line 10
+[24-Jan-2022 02:40:27 UTC] PHP Fatal error:  Uncaught Exception: Error: Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (111)<br />Error No: 2002 in /home/onewoork/lambatlebohrecs.com/shop/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/onewoork/lambatlebohrecs.com/shop/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'onewoork_ocar67...', '-52Cx8c@Sp', 'onewoork_ocar67...', '3306')
+#1 /home/onewoork/lambatlebohrecs.com/shop/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'onewoork_ocar67...', '-52Cx8c@Sp', 'onewoork_ocar67...', '3306')
+#2 /home/onewoork/lambatlebohrecs.com/shop/system/startup.php(104): require_once('/home/onewoork/...')
+#3 /home/onewoork/lambatlebohrecs.com/shop/index.php(19): start('catalog')
+#4 {main}
+  thrown in /home/onewoork/lambatlebohrecs.com/shop/system/library/db/mysqli.php on line 10
+[21-Feb-2022 15:14:15 UTC] PHP Fatal error:  Uncaught Exception: Error: Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2)<br />Error No: 2002 in /home/onewoork/lambatlebohrecs.com/shop/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/onewoork/lambatlebohrecs.com/shop/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'onewoork_ocar67...', '-52Cx8c@Sp', 'onewoork_ocar67...', '3306')
+#1 /home/onewoork/lambatlebohrecs.com/shop/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'onewoork_ocar67...', '-52Cx8c@Sp', 'onewoork_ocar67...', '3306')
+#2 /home/onewoork/lambatlebohrecs.com/shop/system/startup.php(104): require_once('/home/onewoork/...')
+#3 /home/onewoork/lambatlebohrecs.com/shop/index.php(19): start('catalog')
+#4 {main}
+  thrown in /home/onewoork/lambatlebohrecs.com/shop/system/library/db/mysqli.php on line 10
+[21-Feb-2022 15:15:16 UTC] PHP Fatal error:  Uncaught Exception: Error: Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2)<br />Error No: 2002 in /home/onewoork/lambatlebohrecs.com/shop/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/onewoork/lambatlebohrecs.com/shop/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'onewoork_ocar67...', '-52Cx8c@Sp', 'onewoork_ocar67...', '3306')
+#1 /home/onewoork/lambatlebohrecs.com/shop/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'onewoork_ocar67...', '-52Cx8c@Sp', 'onewoork_ocar67...', '3306')
+#2 /home/onewoork/lambatlebohrecs.com/shop/system/startup.php(104): require_once('/home/onewoork/...')
+#3 /home/onewoork/lambatlebohrecs.com/shop/index.php(19): start('catalog')
+#4 {main}
+  thrown in /home/onewoork/lambatlebohrecs.com/shop/system/library/db/mysqli.php on line 10
+[21-Feb-2022 15:15:31 UTC] PHP Fatal error:  Uncaught Exception: Error: Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2)<br />Error No: 2002 in /home/onewoork/lambatlebohrecs.com/shop/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/onewoork/lambatlebohrecs.com/shop/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'onewoork_ocar67...', '-52Cx8c@Sp', 'onewoork_ocar67...', '3306')
+#1 /home/onewoork/lambatlebohrecs.com/shop/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'onewoork_ocar67...', '-52Cx8c@Sp', 'onewoork_ocar67...', '3306')
+#2 /home/onewoork/lambatlebohrecs.com/shop/system/startup.php(104): require_once('/home/onewoork/...')
+#3 /home/onewoork/lambatlebohrecs.com/shop/index.php(19): start('catalog')
+#4 {main}
+  thrown in /home/onewoork/lambatlebohrecs.com/shop/system/library/db/mysqli.php on line 10
+[16-Apr-2022 15:02:37 UTC] PHP Fatal error:  Uncaught Exception: Error: Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2)<br />Error No: 2002 in /home/onewoork/lambatlebohrecs.com/shop/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/onewoork/lambatlebohrecs.com/shop/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'onewoork_ocar67...', '-52Cx8c@Sp', 'onewoork_ocar67...', '3306')
+#1 /home/onewoork/lambatlebohrecs.com/shop/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'onewoork_ocar67...', '-52Cx8c@Sp', 'onewoork_ocar67...', '3306')
+#2 /home/onewoork/lambatlebohrecs.com/shop/system/startup.php(104): require_once('/home/onewoork/...')
+#3 /home/onewoork/lambatlebohrecs.com/shop/index.php(19): start('catalog')
+#4 {main}
+  thrown in /home/onewoork/lambatlebohrecs.com/shop/system/library/db/mysqli.php on line 10

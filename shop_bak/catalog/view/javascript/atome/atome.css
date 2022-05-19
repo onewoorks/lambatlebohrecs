@@ -1,0 +1,12 @@
+.atome-text {
+    color: #999;
+    font-size: 11px;
+}
+.atome-price {
+    color: #000;
+    font-weight: 700;
+}
+.atome-icon {
+    max-height: 16px;
+    margin-bottom: 5px;
+}

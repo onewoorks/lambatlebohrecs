@@ -364,7 +364,7 @@ position: absolute;
     right: 82px;
     top: 29px;
 }
-#search .btn-lg {padding:8px}
+#search .btn-lg {padding:6px}
 
 @media(max-width:767px){
     .mobile-add-to-cart {

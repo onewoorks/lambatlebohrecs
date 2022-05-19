@@ -45,7 +45,7 @@ a {
 }
 a:hover {
 	text-decoration: none;
-	background-color:#fff !important;
+	/*background-color:#fff !important;*/
 }
 legend {
 	font-size: 18px;

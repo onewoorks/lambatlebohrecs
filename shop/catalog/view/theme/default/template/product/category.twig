@@ -61,8 +61,18 @@
         <div class="col-md-3 col-sm-6 hidden">
           <div class="form-group"><a href="{{ compare }}" id="compare-total" class="btn btn-link">{{ text_compare }}</a></div>
         </div>
-        <div class="col-md-4 col-xs-6">
-          <div class="form-group input-group input-group-sm">
+        <div class="col-md-4 col-xs-12 text-right">
+          <div class="dropdown" style="margin-bottom:10px">
+              <button class="btn btn-default dropdown-toggle" type="button" id="pick_sort" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Sort By 
+              </button>
+              <ul class="dropdown-menu dropdown-menu-right">
+                {% for sorts in sorts %}
+                          <li data-name='{{ sorts.text }}'><a href="{{ sorts.href }}">{{ sorts.text }}</a></li>
+                          {% endfor %}
+              </ul>
+            </div>
+          <div class="form-group input-group input-group-sm hidden">
             <label class="input-group-addon" for="input-sort">{{ text_sort }}</label>
             <select id="input-sort" class="form-control" onchange="location = this.value;">
               {% for sorts in sorts %}
@@ -90,16 +100,33 @@
           </div>
         </div>
       </div>
-      <div class="row"> {% for product in products %}
-        <div class="product-layout product-list col-xs-12">
-          <div class="product-thumb">
+      <div class="row"> {% for ind,product in products %}
+        <div class="product-layout product-list col-xs-6">
+            <div 
+                data-aos="fade-up" 
+                data-aos-delay="{{ ind*50 }}" 
+                data-aos-easing="ease-in-out"
+                >
+            <div class="product-thumb">
             {% if product.tag != '' %}
               <div class="product-tag">{{ product.tag }}</div>
             {% endif %}
-            <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+            
+            {% if product.quantity == 0 %}
+            <div class="soldout">Out of Stock</div>
+            {% endif %}
+            {% if product.stock_stat == '8' and product.quantity > 0 %}
+            <div class="product-tag-preorder"><strong>{{ product.stock_stat }}</strong></div>
+            {% endif %}
+            <div class="image">
+                {% if product.quantity == 0 %}
+            <img src="https://lambatlebohrecs.com/image/catalog/common/transparent-overlay.png" class="img-responsive soldout-overlay">
+            {% endif %}
+                <a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
             <div>
               <div class="caption">
-                <h4><a href="{{ product.href }}">{{ product.name|slice(0,50) | trim(' ') }}{{ product.name|length > 50 ? '...' : '' }}</a></h4>
+                  <h4 class="hidden-xs"><a href="{{ product.href }}">{{ product.name|slice(0,50) | trim(' ') }}{{ product.name|length > 50 ? '...' : '' }}</a></h4>
+                    <h4 class="visible-xs"><a href="{{ product.href }}">{{ product.name|slice(0,30) | trim(' ') }}{{ product.name|length > 30 ? '...' : '' }}</a></h4>
                 {% if product.price %}
                 <p class="price"> {% if not product.special %}
                   {{ product.price }}
@@ -118,6 +145,7 @@
               </div>
             </div>
           </div>
+            </div>
         </div>
         {% endfor %} </div>
       <div class="row">
@@ -134,4 +162,25 @@
       {{ content_bottom }}</div>
     {{ column_right }}</div>
 </div>
+<script>
+    var url_string = window.location.href
+    var url = new URL(url_string);
+    var sort_title = 'Sort By'
+    var data_sort = url.searchParams.get("sort");
+    var data_order = url.searchParams.get("order")
+    if(data_sort === 'p.price' && data_order === 'ASC'){
+        sort_title = "Price - Low to High"
+    }
+    if(data_sort === 'p.price' && data_order === 'DESC'){
+        sort_title = "Price - High to Low"
+    }
+    if(data_sort === 'p.date_added' && data_order === 'ASC'){
+        sort_title = "Date - Old to New"
+    }
+    if(data_sort === 'p.date_added' && data_order === 'DESC'){
+        sort_title = "Date - Old to New"
+    }
+    sort_title = sort_title + ' <span class="caret"></span>'
+    $('#pick_sort').html(sort_title);
+</script>
 {{ footer }} 

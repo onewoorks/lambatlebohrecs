@@ -18,13 +18,13 @@ class ControllerProductCategory extends Controller {
 		if (isset($this->request->get['sort'])) {
 			$sort = $this->request->get['sort'];
 		} else {
-			$sort = 'p.sort_order';
+			$sort = 'p.date_added';
 		}
 
 		if (isset($this->request->get['order'])) {
 			$order = $this->request->get['order'];
 		} else {
-			$order = 'ASC';
+			$order = 'DESC';
 		}
 
 		if (isset($this->request->get['page'])) {
@@ -195,6 +195,8 @@ class ControllerProductCategory extends Controller {
 				}
 
 				$data['products'][] = array(
+				    'quantity'    => $result['quantity'],
+				    'stock_stat'  => $result['status'],
 					'tag'		  => $result['tag'],
 					'product_id'  => $result['product_id'],
 					'thumb'       => $image,
@@ -221,11 +223,11 @@ class ControllerProductCategory extends Controller {
 
 			$data['sorts'] = array();
 
-			$data['sorts'][] = array(
-				'text'  => $this->language->get('text_default'),
-				'value' => 'p.sort_order-ASC',
-				'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.sort_order&order=ASC' . $url)
-			);
+// 			$data['sorts'][] = array(
+// 				'text'  => $this->language->get('text_default'),
+// 				'value' => 'p.date_added-DESC',
+// 				'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.date_added&order=DESC' . $url)
+// 			);
 
 			// $data['sorts'][] = array(
 			// 	'text'  => $this->language->get('text_name_asc'),
@@ -253,14 +255,14 @@ class ControllerProductCategory extends Controller {
 
 			$data['sorts'][] = array(
 				'text'  => $this->language->get('text_date_asc'),
-				'value' => 'p.price-ASC',
-				'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.date&order=ASC' . $url)
+				'value' => 'p.date_added-ASC',
+				'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.date_added&order=ASC' . $url)
 			);
 
 			$data['sorts'][] = array(
 				'text'  => $this->language->get('text_date_desc'),
-				'value' => 'p.price-DESC',
-				'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.date&order=DESC' . $url)
+				'value' => 'p.date_added-DESC',
+				'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.date_added&order=DESC' . $url)
 			);
 
 			// if ($this->config->get('config_review_status')) {

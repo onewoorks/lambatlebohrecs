@@ -14,7 +14,8 @@
     {% set class = 'col-sm-12' %}
     {% endif %}
     <div id="content" class="{{ class }}">{{ content_top }}
-      <h1>{{ heading_title }}</h1>
+      <h1 style="margin-bottom:30px">{{ heading_title }}</h1>
+      <div class="hidden">
       <label class="control-label" for="input-search">{{ entry_search }}</label>
       <div class="row">
         <div class="col-sm-4">
@@ -72,7 +73,10 @@
 
       
       <h2 style="margin:40px 0">{{ text_search }}</h2>
+      </div>
       {% if products %}
+
+      <div class="hidden">
       <div class="row" style="margin-top:20px">
         <div class="col-md-2 col-sm-6 hidden">
           <div class="btn-group btn-group-sm">
@@ -114,15 +118,16 @@
           </div>
         </div>
       </div>
+      </div>
       <div class="row">
         {% for product in products %}
         <div class="product-layout product-list col-xs-12">
           <div class="product-thumb">
             <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
             <div>
-              <div class="caption">
-                <h4><a href="{{ product.href }}">{{ product.name }}</a></h4>
-                <p>{{ product.description }}</p>
+              <div class="caption" style="min-height:80px">
+                <h4 class='longtext'><a href="{{ product.href }}">{{ product.name }}</a></h4>
+                
                 {% if product.price %}
                 <p class="price">
                   {% if  not product.special %}

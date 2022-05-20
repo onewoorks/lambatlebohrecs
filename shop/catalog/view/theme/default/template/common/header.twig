@@ -23,14 +23,14 @@
 <link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css" />
 <link href="catalog/view/theme/default/stylesheet/stylesheet.css" rel="stylesheet">
-<link href="catalog/view/theme/default/stylesheet/lambatleboh.css?v=1.26" rel="stylesheet">
+<link href="catalog/view/theme/default/stylesheebt/lambatleoh.css?v=1.96" rel="stylesheet">
 {% for style in styles %}
 <link href="{{ style.href }}" type="text/css" rel="{{ style.rel }}" media="{{ style.media }}" />
 {% endfor %}
 {% for script in scripts %}
 <script src="{{ script }}" type="text/javascript"></script>
 {% endfor %}
-<script src="catalog/view/javascript/common.js?v=1" type="text/javascript"></script>
+<script src="catalog/view/javascript/common.js?v=1.5" type="text/javascript"></script>
 {% for link in links %}
 <link href="{{ link.href }}" rel="{{ link.rel }}" />
 {% endfor %}
@@ -60,9 +60,23 @@
       </div>
       <div class="header-line-2">
       
+
       <ul class="list-inline">
-      <li>{{ search }}</li>
-        <li class="dropdown"><a href="{{ account }}" title="{{ text_account }}" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" style="font-size:20px;"></i> <span class="hidden-xs hidden-sm hidden-md">{{ text_account }}</span> 
+        <li><div id="opensearch" style="cursor: pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+<g id="surface1">
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 23.429688 23.234375 L 16.695312 16.230469 C 18.414062 14.507812 19.476562 12.132812 19.476562 9.515625 C 19.476562 4.269531 15.207031 0 9.960938 0 C 4.714844 0 0.445312 4.269531 0.445312 9.515625 C 0.445312 14.761719 4.714844 19.03125 9.960938 19.03125 C 12.265625 19.03125 14.378906 18.207031 16.027344 16.839844 L 22.773438 23.859375 C 22.863281 23.953125 22.980469 24 23.101562 24 C 23.214844 24 23.328125 23.957031 23.414062 23.875 C 23.597656 23.699219 23.601562 23.414062 23.429688 23.234375 Z M 9.960938 18.125 C 5.214844 18.125 1.351562 14.261719 1.351562 9.515625 C 1.351562 4.769531 5.214844 0.90625 9.960938 0.90625 C 14.707031 0.90625 18.570312 4.769531 18.570312 9.515625 C 18.570312 14.261719 14.707031 18.125 9.960938 18.125 Z M 9.960938 18.125 "/>
+</g>
+</svg>
+
+        </div></li>
+        <li class="dropdown"><a href="{{ account }}" title="{{ text_account }}" class="dropdown-toggle" data-toggle="dropdown">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+<g id="surface1">
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 12 0 C 5.359375 0 0 5.378906 0 12 C 0 18.628906 5.371094 24 12 24 C 18.660156 24 24 18.605469 24 12 C 24 5.363281 18.617188 0 12 0 Z M 18.175781 19.066406 C 16.464844 20.566406 14.296875 21.386719 12 21.386719 C 9.703125 21.386719 7.535156 20.566406 5.824219 19.070312 C 5.59375 18.867188 5.488281 18.554688 5.550781 18.253906 C 6.140625 15.367188 7.980469 13.089844 10.320312 12.34375 C 9.097656 11.621094 8.261719 10.132812 8.261719 8.417969 C 8.261719 5.992188 9.933594 4.027344 12 4.027344 C 14.066406 4.027344 15.738281 5.992188 15.738281 8.417969 C 15.738281 10.132812 14.902344 11.617188 13.679688 12.339844 C 16.019531 13.089844 17.859375 15.367188 18.449219 18.253906 C 18.511719 18.554688 18.40625 18.867188 18.175781 19.066406 Z M 18.175781 19.066406 "/>
+</g>
+</svg>
+ <span class="hidden-xs hidden-sm hidden-md">{{ text_account }}</span> 
         </a>
           <ul class="dropdown-menu dropdown-menu-right">
             {% if logged %}
@@ -82,7 +96,11 @@
             href="{{ shopping_cart }}" 
             title="{{ text_shopping_cart }}">
                 <div class="item-in-cart">{{ total_item }}</div>
-                <i class="fa fa-shopping-cart" style="font-size:20px"></i> <span class="hidden-xs hidden-sm hidden-md">{{ text_shopping_cart }}</span></a>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+<g id="surface1">
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 20.140625 5.925781 L 16.253906 5.925781 L 16.253906 4.664062 C 16.253906 2.09375 14.164062 0 11.589844 0 C 9.019531 0 6.929688 2.09375 6.929688 4.664062 L 6.929688 5.925781 L 3.582031 5.925781 C 3.300781 5.925781 3.070312 6.15625 3.070312 6.4375 L 0.199219 23.507812 C 0.199219 23.789062 0.425781 24.015625 0.710938 24.015625 L 23.308594 24.015625 C 23.589844 24.015625 23.816406 23.789062 23.816406 23.507812 L 20.648438 6.4375 C 20.648438 6.15625 20.421875 5.925781 20.140625 5.925781 Z M 7.949219 4.664062 C 7.949219 2.65625 9.582031 1.023438 11.589844 1.023438 C 13.597656 1.023438 15.234375 2.65625 15.234375 4.664062 L 15.234375 5.925781 L 7.949219 5.925781 Z M 22.796875 22.996094 L 1.222656 22.996094 L 4.09375 6.949219 L 6.929688 6.949219 L 6.929688 9.199219 C 6.679688 9.363281 6.519531 9.644531 6.519531 9.964844 C 6.519531 10.472656 6.929688 10.882812 7.4375 10.882812 C 7.945312 10.882812 8.359375 10.472656 8.359375 9.964844 C 8.359375 9.644531 8.195312 9.363281 7.949219 9.199219 L 7.949219 6.949219 L 15.234375 6.949219 L 15.234375 9.199219 C 14.988281 9.363281 14.824219 9.644531 14.824219 9.964844 C 14.824219 10.472656 15.234375 10.882812 15.746094 10.882812 C 16.253906 10.882812 16.664062 10.472656 16.664062 9.964844 C 16.664062 9.644531 16.5 9.363281 16.253906 9.199219 L 16.253906 6.949219 L 19.628906 6.949219 Z M 22.796875 22.996094 "/>
+</g>
+</svg><span class="hidden-xs hidden-sm hidden-md">{{ text_shopping_cart }}</span></a>
                 
             </li>
       </ul>
@@ -94,6 +112,10 @@
 <header id="llb-header" class="llb-mobile container visible-xs" style="background-color:#fff" >
     <div id="mobile-menu" style="display:none">
         <div class="text-right toggleMobileMenu"><i class="fa fa-times fa-2x" style="font-size: 26px;"></i></div>
+        
+        <ul class="cat-menu">
+          <li>{{ search_mobile }}</li>
+        </ul>
         {{ menu }}
         <hr />
         <ul class="nav navbar-nav">
@@ -119,11 +141,51 @@
         
         <div class="col-xs-5 text-right"  style="padding-top:11px; padding-right:29px;">
             <div style="display:inline-block">
-                <a href="https://lambatlebohrecs.com/cart" style="line-height:34px; margin-right:2px"><i class="fa fa-search" style="font-size:26px" aria-hidden="true"></i></a>    
-            </div>
-            <div style="display:inline-block">
                 <div class="item-in-cart">{{ total_item }}</div>
-                <a href="https://lambatlebohrecs.com/cart" style="line-height:34px; margin-right:10px"><i class="fa fa-shopping-cart" style="font-size:26px" aria-hidden="true"></i></a>    
+                <a href="https://lambatlebohrecs.com/cart" style="line-height:34px; margin-right:10px">
+                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="10px" y="7px" width="24px" height="24px" viewBox="0 0 472.337 472.336" style="enable-background:new 0 0 472.337 472.336;" xml:space="preserve">
+<g>
+	<path d="M396.061,116.577h-76.377V91.715C319.684,41.143,278.543,0,227.969,0c-50.573,0-91.713,41.143-91.713,91.715v24.862H70.45
+		c-5.549,0-10.05,4.497-10.05,10.05L3.914,462.284c0,5.554,4.497,10.053,10.055,10.053h444.397c5.554,0,10.057-4.499,10.057-10.053
+		l-62.31-335.657C406.113,121.073,401.614,116.577,396.061,116.577z M156.352,91.715c0-39.49,32.13-71.614,71.612-71.614
+		c39.49,0,71.618,32.13,71.618,71.614v24.862h-143.23V91.715z M448.322,452.235H24.015l56.479-315.562h55.753v44.258
+		c-4.849,3.246-8.037,8.765-8.037,15.035c0,9.988,8.09,18.09,18.087,18.09c9.985,0,18.09-8.095,18.09-18.09
+		c0-6.275-3.197-11.789-8.044-15.035v-44.258h143.244v44.258c-4.849,3.246-8.041,8.765-8.041,15.035
+		c0,9.988,8.093,18.09,18.09,18.09c9.987,0,18.089-8.095,18.089-18.09c0-6.275-3.201-11.789-8.046-15.035v-44.258h66.329
+		L448.322,452.235z"></path>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+                </a>    
             </div>
             <div style="display:inline-block">
                 <div class="toggleMobileMenu" style="line-height:34px; color:#000"><i class="fa fa-bars" aria-hidden="true" style="font-size:26px"></i></div>      
@@ -133,11 +195,14 @@
     </div>
 </header>
 <div class="llb-content">&nbsp;</div>
-<div class="visible-xs" style="padding:8px 15px 0;"><div style="height:40px">{{ search_mobile }}</div></div>
-
+<div class="visible-xs" style="padding:8px 15px 0;"><div style="height:40px">&nbsp;</div></div>
+<div id='search_box' style='display:none'>{{ search }}</div>
 <script>
     $('.toggleMobileMenu').on('click', function(){
         $('#mobile-menu').toggle()
+    })
+    $('#opensearch').on('click', function(){
+      $('#search_box').toggle()
     })
     AOS.init()
 </script>

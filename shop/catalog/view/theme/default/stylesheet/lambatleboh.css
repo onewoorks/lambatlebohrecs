@@ -366,6 +366,12 @@ position: absolute;
 }
 #search .btn-lg {padding:6px}
 
+.longtext {
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+}
+
+
 @media(max-width:767px){
     .mobile-add-to-cart {
         position: fixed;
@@ -449,7 +455,7 @@ position: absolute;
     /* right: 82px;
     top: 29px; */
     }
-    #search .btn-lg {padding:8px}
+    #search .btn-lg {padding:6px}
     
     
 }

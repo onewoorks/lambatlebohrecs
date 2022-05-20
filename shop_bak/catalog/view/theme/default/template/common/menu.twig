@@ -1,0 +1,26 @@
+{% if categories %}
+
+    <div class="">
+      <ul class="cat-menu">
+        {% for category in categories %}
+        {% if category.children %}
+        <li class="dropdown"><a href="{{ category.href }}" class="dropdown-toggle" data-toggle="dropdown">{{ category.name }}</a>
+          <div class="dropdown-menu">
+            <div class="dropdown-inner"> {% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
+              <ul class="list-unstyled">
+                {% for child in children %}
+                <li><a href="{{ child.href }}">{{ child.name }}</a></li>
+                {% endfor %}
+              </ul>
+              {% endfor %}</div></div>
+        </li>
+        {% else %}
+        <li><a href="{{ category.href }}">{{ category.name }}</a></li>
+        {% endif %}
+        {% endfor %}
+        <li><a href="https://lambatlebohrecs.com/faq">FAQs</a></li>
+        <li><a href="https://lambatlebohrecs.com/contact">CONTACT US</a></li>
+      </ul>
+    </div>
+
+{% endif %} 

@@ -23,7 +23,7 @@
 <link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css" />
 <link href="catalog/view/theme/default/stylesheet/stylesheet.css" rel="stylesheet">
-<link href="catalog/view/theme/default/stylesheet/lambatleboh.css?v=2.01" rel="stylesheet">
+<link href="catalog/view/theme/default/stylesheet/lambatleboh.css?v=2.02" rel="stylesheet">
 {% for style in styles %}
 <link href="{{ style.href }}" type="text/css" rel="{{ style.rel }}" media="{{ style.media }}" />
 {% endfor %}
@@ -204,5 +204,14 @@
     $('#opensearch').on('click', function(){
       $('#search_box').toggle()
     })
+
+    $(document).on('click', function(e){
+      if(e.target.id === 'search_box'){
+        $('#search_box').toggle()
+      }
+    })
+    {# $('#search_box').on('click', function(e){
+      $(this).toggle()
+    }) #}
     AOS.init()
 </script>

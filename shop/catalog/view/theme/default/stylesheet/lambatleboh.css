@@ -479,7 +479,7 @@ position: absolute;
     }
 
     #search .btn.btn-default {
-        border:none;
+        border:1px solid #ccc;
         border-left:none;
         color: #000;
         background-color: transparent;

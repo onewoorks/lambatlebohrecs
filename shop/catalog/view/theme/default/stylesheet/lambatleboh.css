@@ -466,13 +466,17 @@ position: absolute;
         flex-direction: row;
     }
 
-    #search {
-            position: inherit;
-    /* right: 82px;
-    top: 29px; */
-    }
     #search .btn-lg {padding:6px}
-    
+    #search {
+        position: inherit;
+        padding:    0;
+        background-color:#fff;
+        border-radius: 10px;
+    }
+
+    ul.cat-menu {
+        padding-top:0;
+    }
     
 }
 @media(min-width:768px){

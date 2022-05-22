@@ -477,6 +477,13 @@ position: absolute;
     ul.cat-menu {
         padding-top:0;
     }
+
+    #search .btn.btn-default {
+        border:none;
+        border-left:none;
+        color: #000;
+        background-color: transparent;
+    }
     
 }
 @media(min-width:768px){

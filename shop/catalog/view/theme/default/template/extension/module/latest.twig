@@ -31,7 +31,7 @@
             {% endif %}
           <img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a>
           </div>
-      <div class="caption">
+      <div class="caption">aaa
         <h4 class="hidden-xs"><a href="{{ product.href }}">{{ product.name|slice(0,50) | trim(' ') }}{{ product.name|length > 50 ? '...' : '' }}</a></h4>
         <h4 class="visible-xs"><a href="{{ product.href }}">{{ product.name|slice(0,30) | trim(' ') }}{{ product.name|length > 30 ? '...' : '' }}</a></h4>
         <p class="hidden">{{ product.description }}</p>

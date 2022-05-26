@@ -171,6 +171,16 @@ position: absolute;
     box-shadow: -7px 0 6px 0 rgb(0 0 0 / 4%)
 }
 
+.product-tag-backorder { 
+    position: absolute;
+        right: 0px;
+        color: #fff;
+        background-color: red;
+        padding: 3px 11px;
+        -webkit-box-shadow: -7px 0 6px 0 rgb(0 0 0 / 4%);
+        box-shadow: -7px 0 6px 0 rgb(0 0 0 / 4%)
+    }
+
 .alert-success {
     color: #000;
     background-color: #eee;

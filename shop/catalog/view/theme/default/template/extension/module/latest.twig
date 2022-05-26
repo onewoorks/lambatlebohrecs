@@ -9,7 +9,7 @@
     data-aos-easing="ease-in-out"
     data-aos-once="true">
     <div class="product-thumb transition">
-    {% if product.tag != '' %}
+    {% if product.tag != '' and product.stock_stat != 'Backorder' %}
     <div class="product-tag">{{ product.tag }}</div>
     {% endif %}
     {% if product.quantity == 0 %}
@@ -20,10 +20,10 @@
     <div class="product-tag-preorder"><strong>{{ product.stock_stat }}</strong></div>
     {% endif %}
 
-    {% if product.stock_stat == 'Backorder' %}
+    {% if product.stock_stat == 'Backorder' and product.quantity > 0 %}
     <div class="product-tag-backorder"><strong>{{ product.stock_stat }}</strong></div>
     {% endif %}
-    
+
       <div class="image">
           <a href="{{ product.href }}">
             {% if product.quantity == 0 %}
@@ -31,7 +31,7 @@
             {% endif %}
           <img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a>
           </div>
-      <div class="caption">aaa
+      <div class="caption">
         <h4 class="hidden-xs"><a href="{{ product.href }}">{{ product.name|slice(0,50) | trim(' ') }}{{ product.name|length > 50 ? '...' : '' }}</a></h4>
         <h4 class="visible-xs"><a href="{{ product.href }}">{{ product.name|slice(0,30) | trim(' ') }}{{ product.name|length > 30 ? '...' : '' }}</a></h4>
         <p class="hidden">{{ product.description }}</p>

@@ -118,6 +118,9 @@
             {% if product.stock_stat == '8' and product.quantity > 0 %}
             <div class="product-tag-preorder"><strong>{{ product.stock_stat }}</strong></div>
             {% endif %}
+            {% if product.stock_stat == '10' and product.quantity > 0 %}
+            <div class="product-tag-backorder"><strong>{{ product.stock_stat }}</strong></div>
+            {% endif %}
             <div class="image">
                 {% if product.quantity == 0 %}
             <img src="https://lambatlebohrecs.com/image/catalog/common/transparent-overlay.png" class="img-responsive soldout-overlay">

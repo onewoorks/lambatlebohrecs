@@ -16,8 +16,12 @@
     <div class="soldout">Out of Stock</div>
     {% endif %}
     
-    {% if product.stock_stat == 'Pre-Order' and product.quantity > 0 %}
+    {% if product.stock_stat == 'Preorder' and product.quantity > 0 %}
     <div class="product-tag-preorder"><strong>{{ product.stock_stat }}</strong></div>
+    {% endif %}
+
+    {% if product.stock_stat == 'Backorder' %}
+    <div class="product-tag-backorder"><strong>{{ product.stock_stat }}</strong></div>
     {% endif %}
     
       <div class="image">

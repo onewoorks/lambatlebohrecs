@@ -9,7 +9,7 @@
     data-aos-easing="ease-in-out"
     data-aos-once="true">
     <div class="product-thumb transition">
-    {% if product.tag != '' and product.stock_stat != 'Backorder' %}
+    {% if product.tag != '' and product.stock_stat != 'Backorder' and product.stock_stat != 'Preorder' %}
     <div class="product-tag">{{ product.tag }}</div>
     {% endif %}
     {% if product.quantity == 0 %}

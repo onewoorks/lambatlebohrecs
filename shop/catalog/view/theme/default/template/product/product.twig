@@ -119,13 +119,27 @@
           {% if tags %}
         <p>{{ text_tags }}
         {% for i in 0..tags|length - 1 %}
-        {% if i < (tags|length - 1) %} <a href="{{ tags[i].href }}">{{ tags[i].tag }}</a>,
-        {% else %} <a href="{{ tags[i].href }}">{{ tags[i].tag }}</a> {% endif %}
+        {% if i < (tags|length - 1) %} 
+        <a href="{{ tags[i].href }}">{{ tags[i].tag }}
+          </a>,
+          {% else %} 
+        <a href="{{ tags[i].href }}">{{ tags[i].tag }}</a> 
+          {% endif %}
         {% endfor %} </p>
         {% endif %}
           
           <div class="tab-content" style="margin-top:50px;">
-            <div class="tab-pane active" id="tab-description">{{ description }}</div>
+            <div class="tab-pane active" id="tab-description">{{ description }}
+            
+            {% for tag in tags %}
+              {% if tag.tag | lower == 'backorder' %}
+              <span style='color:red'>
+              Backorder: Currently on Backorder and will ship when in stock. 
+              Backordered items will automatically be cancelled and refunded after 90 days from order date.
+              </span>
+              {% endif %}
+            {% endfor %} 
+            </div>
             {% if attribute_groups %}
             <div class="tab-pane" id="tab-specification">
               <table class="table table-bordered">

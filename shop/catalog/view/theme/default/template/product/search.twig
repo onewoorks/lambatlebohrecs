@@ -121,20 +121,20 @@
       </div>
       <div class="row">
         {% for product in products %}
-        <div class="product-layout product-list col-xs-12">
+        <div class="product-layout product-list col-xs-12" style="padding-left: 0px; padding-right: 0px;">
           <div class="product-thumb">
-            {% if product.tag != '' and product.stock_stat != 'Backorder' and product.stock_stat != 'Preorder' %}
+            {% if product.tag != '' and product.stock_stat | lower != 'backorder' and product.stock_stat | lower != 'preorder' %}
               <div class="product-tag">{{ product.tag }}</div>
-              {% endif %}
+            {% endif %}
               {% if product.quantity == 0 %}
               <div class="soldout">Out of Stock</div>
               {% endif %}
               
-              {% if product.stock_stat == 'Preorder' and product.quantity > 0 %}
+              {% if product.stock_stat | lower == 'preorder' and product.quantity >= 0 %}
               <div class="product-tag-preorder"><strong>{{ product.stock_stat }}</strong></div>
               {% endif %}
 
-              {% if product.stock_stat == 'Backorder' and product.quantity > 0 %}
+              {% if product.stock_stat | lower == 'backorder' and product.quantity >= 0 %}
               <div class="product-tag-backorder"><strong>{{ product.stock_stat }}</strong></div>
             {% endif %}
             <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>

@@ -171,6 +171,10 @@ position: absolute;
     box-shadow: -7px 0 6px 0 rgb(0 0 0 / 4%)
 }
 
+#product-search [class^="product-tag"] {
+    margin-right: 15px;
+}
+
 .product-tag-backorder { 
     position: absolute;
         right: 0px;

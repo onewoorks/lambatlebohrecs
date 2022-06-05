@@ -221,6 +221,7 @@ class ControllerProductSearch extends Controller {
 					$rating = false;
 				}
 				$data['products'][] = array(
+					'quantity'    => $result['quantity'],
 					'product_id'  => $result['product_id'],
 					'stock_stat'  => $result['stock_status'],
 					'thumb'       => $image,

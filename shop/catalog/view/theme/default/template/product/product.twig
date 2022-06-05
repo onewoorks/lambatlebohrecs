@@ -133,10 +133,10 @@
             
             {% for tag in tags %}
               {% if tag.tag | lower == 'backorder' %}
-              <span style='color:red; style:margin-top:10px;'>
+              <div style='color:red;margin-top:10px;'>
               Backorder: Currently on Backorder and will ship when in stock. 
               Backordered items will automatically be cancelled and refunded after 90 days from order date.
-              </span>
+              </div>
               {% endif %}
             {% endfor %} 
             </div>
